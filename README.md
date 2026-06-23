@@ -87,7 +87,13 @@ Analyzed:
 - Profit by Category
 - Category Performance Comparison
 
-### 4. Regional Analysis
+### 4. Sub-Category Analysis
+
+Analyzed:
+
+- Sub-Category Performance
+
+### 5. Regional Analysis
 
 Analyzed:
 
@@ -95,18 +101,9 @@ Analyzed:
 - Profit by Region
 - Regional Performance Comparison
 
-### 5. Product Analysis
+### 6. Time Analysis
 
-Analyzed:
-
-- Sub-Category Performance
-- Top Selling Products
-- Most Profitable Products
-- Loss-Making Products
-
-### 6. Time-Series Analysis
-
-Analyzed:
+Analyzing:
 
 - Monthly Sales Trend
 - Monthly Profit Trend
