@@ -117,6 +117,21 @@ Analyzed:
 - Discount Distribution
 - Relationship Between Discount and Profit
 - Impact of Discounts on Business Performance
+  
+### 8. Customer Analysis
+
+Analyzed:
+
+- Top Customers by Sales
+- High-Value Customers
+- Customer Purchasing Patterns
+
+### 9. Product Analysis
+
+Analyzed:
+
+- Top Products by Sales
+- Best-Selling Products
 
 
 ---
