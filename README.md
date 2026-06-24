@@ -103,10 +103,20 @@ Analyzed:
 
 ### 6. Time Analysis
 
-Analyzing:
+Analyzed:
 
 - Monthly Sales Trend
 - Monthly Profit Trend
+- Seasonal Performance Patterns
+
+### 7. Discount Analysis
+
+Analyzed:
+
+- Average Discount Offered
+- Discount Distribution
+- Relationship Between Discount and Profit
+- Impact of Discounts on Business Performance
 
 
 ---
