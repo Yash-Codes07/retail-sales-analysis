@@ -1,239 +1,174 @@
 # Retail Sales Analysis
+### Exploratory Data Analysis & Business Intelligence | Python · Power BI
+
+> **Disclaimer:** This analysis is based on historical data from 2014–2017 and is intended for educational and portfolio purposes only.
+
+---
 
 ## Project Overview
 
-This project analyzes retail sales data from a Superstore dataset to uncover valuable business insights related to sales performance, profitability, product categories, customer behavior, regional performance, and sales trends.
+This project analyzes 4 years of retail transaction data from a U.S.-based superstore to answer real business questions around profitability, regional performance, seasonal trends, discount strategy, and customer value.
 
-The primary objective of this project is to perform Exploratory Data Analysis (EDA) and develop data-driven recommendations that can help businesses improve profitability and operational efficiency.
-
----
-
-## Business Objectives
-
-The analysis aims to answer the following business questions:
-
-- Which product categories generate the highest sales?
-- Which categories generate the highest profit?
-- Which categories are underperforming?
-- How does profitability vary across different regions?
-- What are the monthly sales and profit trends?
-- Which products contribute the most revenue?
-- Which products generate losses?
-- How do discounts affect profitability?
-- Which customers contribute the most revenue?
-- What actions can help improve overall business performance?
+The analysis follows a structured business analytics workflow — from raw data exploration to actionable recommendations — simulating the kind of work a junior data analyst would deliver to management.
 
 ---
 
-## Dataset Information
+## Business Questions Answered
 
-**Dataset:** Sample Superstore Dataset
+| # | Question |
+|---|----------|
+| 1 | Which product categories drive the most revenue vs profit? |
+| 2 | Which sub-categories are loss-making despite high sales? |
+| 3 | Which regions are underperforming on profitability? |
+| 4 | What seasonal patterns exist in sales and profit? |
+| 5 | How do discounts affect profit margins? |
+| 6 | Which customers and products drive the most value? |
 
-The dataset contains information related to:
+---
 
-- Orders
-- Customers
-- Products
-- Sales
-- Profit
-- Discounts
-- Shipping
-- Regions
+## Dataset
 
-### Dataset Size
+**Source:** Sample Superstore Dataset (Kaggle)  
+**Period:** January 2014 – December 2017  
+**Size:** 9,994 rows × 19 columns  
+
+Key columns: `Order Date`, `Category`, `Sub-Category`, `Region`, `Sales`, `Profit`, `Discount`, `Customer ID`, `Product Name`
+
+---
+
+## Tools Used
+
+- **Python** — Pandas, NumPy, Matplotlib, Seaborn
+- **Jupyter Notebook** — Analysis & documentation
+- **Power BI** — Interactive dashboard *(in progress)*
+
+---
+
+## Project Workflow & Key Findings
+
+### 1. KPI Analysis
 
 | Metric | Value |
-|---------|---------:|
-| Rows | 9,994 |
-| Columns | 19 |
-
----
-
-## Tools & Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
-
----
-
-## Project Workflow
-
-### 1. Data Exploration
-
-- Loaded dataset
-- Inspected dataset structure
-- Verified data types
-- Checked for missing values
-- Understood business-related columns
-
-### 2. KPI Analysis
-
-Calculated key business metrics:
-
-- Total Sales
-- Total Profit
-- Total Quantity Sold
-- Total Orders
-
-### 3. Category Analysis
-
-Analyzed:
-
-- Sales by Category
-- Profit by Category
-- Category Performance Comparison
-
-### 4. Sub-Category Analysis
-
-Analyzed:
-
-- Sub-Category Performance
-
-### 5. Regional Analysis
-
-Analyzed:
-
-- Sales by Region
-- Profit by Region
-- Regional Performance Comparison
-
-### 6. Time Analysis
-
-Analyzed:
-
-- Monthly Sales Trend
-- Monthly Profit Trend
-- Seasonal Performance Patterns
-
-### 7. Discount Analysis
-
-Analyzed:
-
-- Average Discount Offered
-- Discount Distribution
-- Relationship Between Discount and Profit
-- Impact of Discounts on Business Performance
-  
-### 8. Customer Analysis
-
-Analyzed:
-
-- Top Customers by Sales
-- High-Value Customers
-- Customer Purchasing Patterns
-
-### 9. Product Analysis
-
-Analyzed:
-
-- Top Products by Sales
-- Best-Selling Products
-
-
----
-
-## Key Performance Indicators (KPIs)
-
-| Metric | Value |
-|---------|---------:|
-| Total Sales | 2,297,200.86 |
-| Total Profit | 286,397.02 |
-| Total Quantity Sold | 37,873 |
+|--------|------:|
+| Total Sales | $2,297,200 |
+| Total Profit | $286,397 |
+| Profit Margin | ~12.5% |
 | Total Orders | 5,009 |
+| Total Units Sold | 37,873 |
+| Avg. Order Value | ~$458 |
 
 ---
 
-## Category Analysis Results
+### 2. Category Analysis
 
-### Sales by Category
+| Category | Sales | Profit | Margin |
+|----------|------:|-------:|-------:|
+| Technology | $836,154 | $145,454 | 17.4% |
+| Office Supplies | $719,047 | $122,490 | 17.0% |
+| Furniture | $741,999 | $18,451 | 2.5% |
 
-| Category | Sales |
-|----------|----------:|
-| Technology | 836,154 |
-| Furniture | 741,999 |
-| Office Supplies | 719,047 |
-
-### Profit by Category
-
-| Category | Profit |
-|----------|----------:|
-| Technology | 145,454 |
-| Office Supplies | 122,490 |
-| Furniture | 18,451 |
+**Key Insight:** Furniture generates the second-highest revenue but has a critically low profit margin of just 2.5% — a major red flag requiring pricing and discount review.
 
 ---
 
-## Key Findings
+### 3. Sub-Category Analysis
 
-### Technology Leads Business Performance
+**Top Profit Performers:** Copiers, Phones, Accessories, Paper, Binders
 
-- Technology generates the highest sales revenue.
-- Technology contributes the highest profit.
-- It is the strongest performing category in the dataset.
+**Loss-Making Sub-Categories:**
 
-### Furniture Has Profitability Issues
+| Sub-Category | Status |
+|-------------|--------|
+| Tables | Highest loss |
+| Bookcases | Loss-making |
+| Supplies | Loss-making |
 
-- Furniture generates substantial sales revenue.
-- Despite strong sales, profit remains significantly lower than other categories.
-- This may indicate excessive discounts, higher operational costs, or pricing inefficiencies.
+**Key Insight:** Tables rank 4th in sales but are one of the biggest loss-makers — a classic revenue-without-profit trap caused by excessive discounting.
 
-### Revenue Does Not Always Mean Profit
+---
 
-- High sales do not necessarily result in high profitability.
-- Profit analysis provides a more accurate picture of business performance than revenue alone.
+### 4. Regional Analysis
+
+| Region | Sales | Profit |
+|--------|------:|-------:|
+| West | Highest | Highest |
+| East | 2nd | 2nd |
+| Central | 3rd | Lowest |
+| South | Lowest | 3rd |
+
+**Key Insight:** Central region has strong sales but the lowest profit of all regions — suggesting over-discounting by regional sales teams.
+
+---
+
+### 5. Time Analysis
+
+- Sales spike consistently between **October–January** every year (Q4 holiday + year-end buying)
+- **2017** shows the strongest year-over-year growth
+- **January 2015** recorded a significant profit loss despite post-holiday sales
+- Most profitable sustained period: **July 2016 – April 2017**
+
+---
+
+### 6. Discount Analysis
+
+- Average discount offered: **~15.6%**
+- A significant cluster of orders carry **40–80% discounts** — these are almost certainly loss-making transactions
+- Discount vs Profit correlation: **-0.22** (higher discounts consistently reduce profit)
+
+---
+
+### 7. Customer Analysis
+
+- Top 10 customers by **Sales** and **Profit** identified separately
+- Top profit customers ≠ top sales customers — high revenue does not always mean high profitability at the customer level
+- Customers appearing in both lists represent the highest overall business value and should be prioritized for retention
+
+---
+
+### 8. Product Analysis
+
+- **Canon imageCLASS 2200 Copier** is the top revenue-generating product by a significant margin
+- Top 10 products dominated by high-ticket office equipment — confirming B2B purchasing patterns
+- Top profit products and top sales products overlap but are **not identical** — revenue and margin are separate levers
+
+---
+
+## Business Recommendations
+
+1. **Fix the Furniture problem** — Conduct a full pricing and discount audit on Tables and Bookcases. Either reprice or consider discontinuation.
+2. **Protect Technology** — The only category winning on both revenue and profit. Prioritize inventory and marketing here.
+3. **Cap discounts at 20%** — Orders with 40%+ discounts are loss-making. Implement a discount approval policy above this threshold.
+4. **Investigate Central region** — High sales but lowest profit. Likely structural over-discounting by regional teams.
+5. **Prepare for Q4 demand** — Sales spike Oct–Jan every year. Stock inventory and scale logistics 6–8 weeks in advance.
+6. **Retain top customers** — High revenue concentration in a small group. A churn event here materially impacts the business.
 
 ---
 
 ## Skills Demonstrated
 
-This project demonstrates practical skills in:
-
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Business KPI Analysis
-- Data Aggregation using Pandas
-- Data Visualization
-- Business Insight Generation
-- Time-Series Analysis
-- Analytical Thinking
-- Data-Driven Decision Making
-
----
-
-## Business Value
-
-The insights generated from this analysis can help businesses:
-
-- Identify profitable product categories
-- Detect underperforming areas
-- Improve pricing strategies
-- Optimize discount policies
-- Allocate resources more effectively
-- Improve overall profitability
+`Exploratory Data Analysis` · `Business KPI Analysis` · `Pandas & NumPy` · `Data Visualization` · `Time-Series Analysis` · `Discount Impact Analysis` · `Business Insight Generation` · `Data-Driven Recommendations`
 
 ---
 
 ## Future Enhancements
 
-- Interactive Power BI Dashboard
-- Customer Segmentation Analysis
-- Machine Learning-Based Sales Prediction
-
+- [ ] Interactive Power BI Dashboard
+- [ ] Customer Segmentation (RFM Analysis)
+- [ ] Sales Forecasting with Machine Learning
 
 ---
 
 ## Project Structure
 
-```text
+```
 Retail-Sales-Analysis/
 │
 ├── data/
+│   └── sample_superstore_dataset.csv
 ├── notebooks/
+│   └── retail_sales_analysis.ipynb
 ├── visuals/
+│   └── (Power BI dashboard screenshots)
 ├── README.md
 └── requirements.txt
 ```
@@ -242,4 +177,6 @@ Retail-Sales-Analysis/
 
 ## Author
 
-**Yash**
+**Yash**  
+B.Sc. (Hons.) Computer Science — University of Delhi  
+[GitHub](https://github.com/Yash-Codes07/retail-sales-analysis) · [LinkedIn](https://www.linkedin.com/in/yash-singh-ba9327375/)
